@@ -12,6 +12,7 @@ const app = express()
 const static = require("./routes/static")
 
 
+
 /* ***********************
  * View Engine and Templates
  *************************/
@@ -28,6 +29,12 @@ app.use(express.static("public"))
 /* ***********************
  * Routes
  *************************/
+// Index route
+app.get("/", function(req, res) {
+  res.render("index", {title: "Home"})
+})
+
+// Static routes
 app.use(static)
 
 /* ***********************
