@@ -1,7 +1,4 @@
 /* CSE Motors - Main Stylesheet */
-/* Mobile-first approach - base styles are for mobile devices */
-
-/* ===== CSS RESET & BASE STYLES ===== */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +6,7 @@
 }
 
 :root {
-  /* Color Scheme - Matching the design images with WCAG AA compliance */
+ 
   --primary-color: #000000;
   --accent-cyan: #00bcd4;
   --text-dark: #1a1a1a;
@@ -24,32 +21,37 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   color: var(--text-dark);
-  background-color: #e8e8e8;
-  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: #e8e8e8; 
   background-image: url('/images/site/checkerboard.jpg');
   background-repeat: repeat;
   background-size: auto;
+  background-position: top center; 
   background-attachment: fixed;
-  padding: 0;
-  margin: 0;
 }
 
+
+
 img {
-  max-width: 100%;
-  height: auto;
   display: block;
+  max-width: 100%;
+  height: auto;  
 }
+
 
 a {
   color: var(--link-color);
   text-decoration: none;
 }
 
+
 a:hover {
   text-decoration: underline;
 }
 
-/* ===== HEADER STYLES ===== */
+/* ===== HEADER ===== */
+
 .site-header {
   background-color: var(--background-light);
   padding: 1rem;
@@ -65,7 +67,7 @@ a:hover {
 }
 
 .site-name {
-  font-size: 1.75rem;
+  font-size: 2%;
   font-weight: bold;
   color: var(--text-dark);
 }
@@ -81,7 +83,55 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== NAVIGATION STYLES ===== */
+/* ===== NAVIGATION ===== */
+
+
+  .site-navigation nav ul li a {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  
+  .container > h1 {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  /* Hero section - overlay on image */
+  .hero {
+    position: relative;
+  }
+
+  .hero-image {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 320px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-overlay .features li {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .cta-btn {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.25rem;
+  }
 .site-navigation {
   background-color: var(--nav-bg);
   margin-bottom: 1.5rem;
@@ -117,9 +167,10 @@ a:hover {
   text-decoration: none;
 }
 
-/* ===== MAIN CONTENT STYLES ===== */
+/* ===== MAIN ===== */
+
 .container {
-  max-width: 1000px;
+  max-width: 1250px;
   margin: 0 auto;
   padding: 0.75rem;
   background-color: #ffffff;
@@ -127,7 +178,7 @@ a:hover {
 }
 
 main {
-  min-height: 60vh;
+  min-height: 10vh;
 }
 
 .container > h1 {
@@ -141,7 +192,7 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO ===== */
 .hero {
   position: relative;
   margin-bottom: 2rem;
@@ -152,7 +203,9 @@ main {
 
 .hero-image {
   width: 100%;
+  height: auto;
   display: block;
+  object-fit: cover;
 }
 
 .hero-overlay {
@@ -207,12 +260,12 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== FEATURE WRAPPER ===== */
+/* ===== FEATURE ===== */
 .feature-wrapper {
   display: block;
 }
 
-/* ===== UPGRADES SECTION ===== */
+/* ===== UPGRADES ===== */
 .upgrades {
   background-color: #ffffff;
   padding: 1rem;
@@ -234,18 +287,18 @@ main {
 }
 
 .upgrade-link {
-  margin: 0;
+  margin: 0;  
+  text-align: center;
+}
+
+.upgrade-link a {
+  display: block;
   background-color: var(--accent-cyan);
   border: 2px solid var(--text-dark);
   border-radius: 4px;
-  padding: 0.75rem 0.75rem 0;
-  text-align: center;
+  padding: 0.75rem;
   transition: transform 0.3s ease;
-  text-align: center;
-  transition: transform 0.3s ease;
-  overflow: visible;  /* Allow caption to show outside */
 }
-
 .upgrade-link:hover {
   transform: scale(1.05);
 }
@@ -266,7 +319,7 @@ main {
 
 
 
-/* ===== REVIEWS SECTION ===== */
+/* ===== REVIEWS ===== */
 .reviews {
   background-color: #ffffff;
   padding: 1rem;
@@ -298,7 +351,7 @@ main {
   font-weight: bold;
 }
 
-/* ===== FOOTER STYLES ===== */
+/* ===== FOOTER ===== */
 .site-footer {
   background-color: var(--primary-color);
   color: var(--text-light);
@@ -321,22 +374,11 @@ main {
   color: var(--text-light);
 }
 
-/* ===== UTILITY CLASSES ===== */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
 
-/* ===== MEDIA QUERIES FOR LARGER SCREENS ===== */
+
+/* ===== LARGER SCREENS ===== */
 @media screen and (min-width: 768px) {
-  /* Header */
+  
   .site-header {
     padding: 1.5rem 2rem;
   }
@@ -344,54 +386,11 @@ main {
   .site-name {
     font-size: 2rem;
   }
-
-  /* Navigation */
-  .site-navigation nav ul li a {
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
+  .upgrade-item {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Main heading */
-  .container > h1 {
-    font-size: 1.5rem;
-    padding: 1rem;
-  }
-
-  /* Hero section - overlay on image */
-  .hero {
-    position: relative;
-  }
-
-  .hero-image {
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    left: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 320px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .hero-overlay h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero-overlay .features li {
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .cta-btn {
-    font-size: 0.95rem;
-    padding: 0.65rem 1.25rem;
-  }
+  
 
   /* Feature wrapper - two columns */
   .feature-wrapper {
@@ -413,9 +412,9 @@ main {
 .upgrade-link figcaption {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #0066cc;  /* Blue color */
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
+  color: #0066cc; 
+  bottom: auto;
+  padding: 0.2rem;
   background-color: transparent;
 }
 
@@ -424,7 +423,6 @@ main {
   .reviews h3 {
     font-size: 1.2rem;
   }
-
   .reviews ul li {
     font-size: 0.95rem;
   }
