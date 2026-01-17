@@ -1,4 +1,5 @@
--- TA-- 1. Insert Tony Stark into the account table
+-- Task 1 (See task 2 in the db-sql-code)
+-- 1. Insert Tony Stark into the account table
 INSERT INTO public.account (
     account_firstname,
     account_lastname,
