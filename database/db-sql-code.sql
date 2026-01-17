@@ -1,4 +1,4 @@
--- 
+-- Creating account_type
 CREATE TYPE public.account_type AS ENUM
     ('Client', 'Employee', 'Admin');
 
@@ -248,7 +248,7 @@ VALUES   (
   );
 
 /* ================================*/
-   REQUIRED TASK 1 QUERIES
+--    REQUIRED TASK 1 QUERIES
 
 
 -- Task 1 Query #4: Update GM Hummer description
