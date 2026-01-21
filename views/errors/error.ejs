@@ -1,0 +1,20 @@
+<!-- Content Heading -->
+<% if (title) { %>
+  <h1><%= title %></h1>
+<% } else { %>
+  <h1>Oops! Something went wrong.</h1>
+<% } %>
+
+<!-- Message Block -->
+<% if (message) { %>
+  <p><%- message %></p>
+<% } else { %>
+  <p>The page you are looking for cannot be found.</p>
+<% } %>
+
+<!-- Inventory Display Placeholder -->
+<% if (typeof grid !== 'undefined') { %>
+  <%- grid %>
+<% } %>
+<h1 style="color: red;"><%= title %></h1>
+<p style="color: orange;"><%- message %></p>

@@ -33,7 +33,7 @@ module.exports = {
   pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: {
-      rejectUnauthorized: false,
+      rejectUnauthorized: false, //enabled in the production environment
     },
   })
   module.exports = pool
