@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | CSE Motors</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* ===== Responsive vehicle detail page ===== */
+    .vehicle-detail {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0;
+      align-items: flex-start;
+    }
+
+    .vehicle-detail img {
+      max-width: 100%;
+      height: auto;
+      flex: 1 1 400px;
+      border-radius: 8px;
+    }
+
+    .vehicle-info {
+      flex: 1 1 400px;
+      font-family: Arial, sans-serif;
+    }
+
+    .vehicle-info h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    .vehicle-info p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .vehicle-detail {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <%- nav %>
+    </nav>
+  </header>
+
+  <main>
+    <%- detailHTML %>
+  </main>
+
+  <%- include("../partials/footer") %>
+</body>
+</html>
