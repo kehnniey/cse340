@@ -24,15 +24,17 @@ Util.getNav = async function (req, res, next) {
   return list
 }
 
-
-
-
-
-
-
-
-
-
+/* ************************
+ * Format price with commas and dollar sign
+ ************************** */
+Util.formatPrice = function(price) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  }).format(price)
+}
 
 /* **************************************
 * Build the classification view HTML
@@ -55,8 +57,7 @@ Util.buildClassificationGrid = async function(data){
       + vehicle.inv_make + ' ' + vehicle.inv_model + ' details">' 
       + vehicle.inv_make + ' ' + vehicle.inv_model + '</a>'
       grid += '</h2>'
-      grid += '<span>$' 
-      + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</span>'
+      grid += '<span>' + Util.formatPrice(vehicle.inv_price) + '</span>'
       grid += '</div>'
       grid += '</li>'
     })
@@ -67,13 +68,11 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
-/* 🔹 ADD THIS: Build vehicle detail view HTML */
+/* **************************************
+* Build vehicle detail view HTML
+* ************************************ */
 Util.buildVehicleDetail = function (vehicle) {
-  const price = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  }).format(vehicle.inv_price)
-
+  const price = Util.formatPrice(vehicle.inv_price)
   const mileage = new Intl.NumberFormat("en-US").format(vehicle.inv_miles)
 
   return `
@@ -92,33 +91,6 @@ Util.buildVehicleDetail = function (vehicle) {
     </section>
   `
 }
-
-/* Build vehicle detail view HTML */
-Util.buildVehicleDetail = function (vehicle) {
-  const price = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  }).format(vehicle.inv_price)
-
-  const mileage = new Intl.NumberFormat("en-US").format(vehicle.inv_miles)
-
-  return `
-    <section class="vehicle-detail">
-      <img 
-        src="${vehicle.inv_image}" 
-        alt="Image of ${vehicle.inv_make} ${vehicle.inv_model} on CSE Motors"
-      />
-      <div class="vehicle-info">
-        <h2>${vehicle.inv_year} ${vehicle.inv_make} ${vehicle.inv_model}</h2>
-        <p><strong>Price:</strong> ${price}</p>
-        <p><strong>Mileage:</strong> ${mileage} miles</p>
-        <p><strong>Description:</strong> ${vehicle.inv_description}</p>
-        <p><strong>Color:</strong> ${vehicle.inv_color}</p>
-      </div>
-    </section>
-  `
-}
-
 
 /* ****************************************
  * Middleware For Handling Errors
@@ -126,6 +98,5 @@ Util.buildVehicleDetail = function (vehicle) {
  * General Error Handling
  **************************************** */
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
-
 
 module.exports = Util
