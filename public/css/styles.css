@@ -1,4 +1,8 @@
-/* CSE Motors - Main Stylesheet */
+/* =====================================================
+   CSE Motors - Main Stylesheet
+   ===================================================== */
+
+/* ===== RESET & GLOBAL ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +10,6 @@
 }
 
 :root {
- 
   --primary-color: #000000;
   --accent-cyan: #00bcd4;
   --text-dark: #1a1a1a;
@@ -19,40 +22,33 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  /* line-height: 1.6; */
-  /* color: var(--text-dark); */
-  margin: 0;
-  padding: 0;
-  /* background-color: #e8e8e8;  */
   background-image: url('/images/site/checkerboard.jpg');
   background-repeat: repeat;
-  background-size: auto;
-  background-position: top center; 
-  /* background-attachment: fixed; */
-  
+  background-position: top center;
 }
-
-
 
 img {
   display: block;
   max-width: 100%;
-  height: auto;  
+  height: auto;
 }
-
 
 a {
   color: var(--link-color);
   text-decoration: none;
 }
 
-
 a:hover {
   text-decoration: underline;
 }
 
-/* ===== HEADER ===== */
+h1, h2, p {
+  color: var(--text-dark);
+  background-color: #ffffff;
+  text-transform: capitalize;
+}
 
+/* ===== HEADER ===== */
 .site-header {
   background-color: var(--background-light);
   padding: 1rem;
@@ -68,75 +64,20 @@ a:hover {
 }
 
 .site-name {
-  font-size: 2%;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: var(--text-dark);
 }
 
 .site-name a {
   color: var(--text-dark);
-  text-decoration: none;
 }
 
 .tools a {
-  color: var(--text-dark);
   font-size: 0.9rem;
   text-decoration: underline;
 }
 
 /* ===== NAVIGATION ===== */
-
-
-  .site-navigation nav ul li a {
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  
-  .container > h1 {
-    font-size: 1.5rem;
-    padding: 1rem;
-  }
-
-  /* Hero section - overlay on image */
- .hero {
-  position: relative;
-  margin-bottom: 2rem;
-  background-color: #ffffff;  /* Already there - good! */
-  border-radius: 8px;
-  overflow: hidden;
-}
-  .hero-image {
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    left: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 320px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .hero-overlay h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero-overlay .features li {
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .cta-btn {
-    font-size: 0.95rem;
-    padding: 0.65rem 1.25rem;
-  }
-
 .site-navigation {
   background-color: var(--nav-bg);
   margin-bottom: 1.5rem;
@@ -148,12 +89,10 @@ a:hover {
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0;
 }
 
 .site-navigation nav ul li {
   flex: 1 1 auto;
-  min-width: 80px;
   text-align: center;
 }
 
@@ -163,54 +102,33 @@ a:hover {
   color: var(--text-light);
   font-weight: 500;
   transition: background-color 0.3s ease;
-  font-size: 0.95rem;
 }
 
 .site-navigation nav ul li a:hover,
 .site-navigation nav ul li a:focus {
   background-color: #3c3c3c;
-  text-decoration: none;
 }
 
-/* ===== MAIN ===== */
-
+/* ===== MAIN CONTAINER ===== */
 .container {
   max-width: 1250px;
   margin: 0 auto;
-  padding: 0.75rem;
-  background-color: #ffffff;  
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);  
-  min-height: 100vh;  
-}
-
-main {
-  min-height: 10vh;
-}
-
-/* .container > h1 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: var(--text-dark);
-  font-weight: bold;
+  padding: 1rem;
   background-color: #ffffff;
-  padding: 0.75rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-} */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  min-height: 100vh;
+}
 
 /* ===== HERO ===== */
 .hero {
   position: relative;
   margin-bottom: 2rem;
-  background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
 }
 
 .hero-image {
   width: 100%;
-  height: auto;
-  display: block;
   object-fit: cover;
 }
 
@@ -220,70 +138,58 @@ main {
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(245, 245, 245, 0.9);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   padding: 1rem;
-  max-width: 250px;
-  text-align: left;
+  max-width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .hero-overlay h2 {
-  font-size: 1.1rem;
-  color: var(--text-dark);
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  font-weight: bold;
 }
 
 .hero-overlay .features {
   list-style: none;
   margin-bottom: 0.75rem;
-  padding: 0;
 }
 
 .hero-overlay .features li {
-  color: var(--text-dark);
+  font-size: 0.9rem;
   margin-bottom: 0.25rem;
-  font-size: 0.85rem;
 }
 
 .cta-btn {
-  background-color: var(--accent-cyan);
-  color: var(--text-dark);
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--text-dark);
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: Arial, Helvetica, sans-serif;
   width: 100%;
+  padding: 0.6rem;
+  background-color: var(--accent-cyan);
+  border: 2px solid var(--text-dark);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.cta-btn:hover,
-.cta-btn:focus {
+.cta-btn:hover {
   background-color: #00acc1;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== FEATURE ===== */
+/* ===== FEATURE / UPGRADES ===== */
 .feature-wrapper {
   display: block;
 }
 
-/* ===== UPGRADES ===== */
-.upgrades {
+.upgrades,
+.reviews {
   background-color: #ffffff;
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1.5rem;
 }
 
-.upgrades h3 {
+.upgrades h3,
+.reviews h3 {
   font-size: 1.1rem;
-  color: var(--text-dark);
   margin-bottom: 1rem;
-  font-weight: bold;
 }
 
 .upgrade-item {
@@ -293,578 +199,120 @@ main {
 }
 
 .upgrade-link {
-  margin: 0;  
   text-align: center;
 }
 
 .upgrade-link a {
   display: block;
+  padding: 0.75rem;
   background-color: var(--accent-cyan);
   border: 2px solid var(--text-dark);
   border-radius: 4px;
-  padding: 0.75rem;
   transition: transform 0.3s ease;
 }
-.upgrade-link:hover {
+
+.upgrade-link a:hover {
   transform: scale(1.05);
 }
 
-.upgrade-link a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
 .upgrade-link img {
-  width: 100%;
   max-width: 80px;
-  height: 80px;
   margin: 0 auto 0.5rem;
-  object-fit: contain;
 }
 
-
-
-/* ===== REVIEWS ===== */
-.reviews {
-  background-color: #ffffff;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+/* ===== INVENTORY ===== */
+#inv-display {
+  padding: 1.5rem;
 }
 
-.reviews h3 {
-  font-size: 1.1rem;
-  color: var(--text-dark);
-  margin-bottom: 0.75rem;
-  font-weight: bold;
-}
-
-.reviews ul {
+#inv-display ul {
   list-style: none;
-  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
-.reviews ul li {
+#inv-display li {
+  background-color: #ffffff;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  flex: 0 1 calc(33.333% - 1rem);
+  transition: 0.3s ease;
+}
+
+#inv-display li:hover {
+  transform: translateY(-5px);
+}
+
+#inv-display li img {
+  height: 160px;
+  object-fit: contain;
   margin-bottom: 0.75rem;
-  color: var(--text-dark);
-  font-size: 0.85rem;
-  line-height: 1.5;
 }
 
-.reviews ul li::before {
-  content: '• ';
+#inv-display li h2 {
+  font-size: 1.1rem;
+  color: var(--link-color);
+}
+
+#inv-display li span {
   font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* ===== VEHICLE DETAIL ===== */
+.vehicle-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.vehicle-detail img {
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+.vehicle-info h2 {
+  font-size: 2rem;
+  border-bottom: 3px solid var(--accent-cyan);
+  margin-bottom: 1rem;
+}
+
+.vehicle-info p {
+  font-size: 1.1rem;
+  margin: 0.75rem 0;
 }
 
 /* ===== FOOTER ===== */
 .site-footer {
   background-color: var(--primary-color);
   color: var(--text-light);
-  padding: 1.5rem 1rem;
-  margin-top: 3rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-content p {
-  margin-bottom: 0.25rem;
-  font-size: 0.85rem;
-}
-
-.footer-content a {
-  color: var(--text-light);
-}
-
-
-
-/* ===== LARGER SCREENS ===== */
-@media screen and (min-width: 768px) {
-  
-  .site-header {
-    padding: 1.5rem 2rem;
-  }
-
-  .site-name {
-    font-size: 2rem;
-  }
-  .upgrade-item {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  
-
-  /* Feature wrapper - two columns */
+/* ===== MEDIA QUERIES ===== */
+@media (min-width: 768px) {
   .feature-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
-
-  /* Upgrades */
-  .upgrades h3 {
-    font-size: 1.2rem;
-  }
-
-  .upgrade-link img {
-    max-width: 100px;
-    height: 50px;
-  }
-
-.upgrade-link figcaption {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #0066cc; 
-  bottom: auto;
-  padding: 0.2rem;
-  background-color: transparent;
 }
 
-  
-  /* Reviews */
-  .reviews h3 {
-    font-size: 1.2rem;
-  }
-  .reviews ul li {
-    font-size: 0.95rem;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .container > h1 {
-    font-size: 1.75rem;
-    padding: 1.25rem;
-  }
-
-  .hero-overlay {
-    max-width: 300px;
-  }
-
-  .hero-overlay h2 {
-    font-size: 1.75rem;
-  }
-
-  .upgrades h3,
-  .reviews h3 {
-    font-size: 1.35rem;
-  }
-}
-
-/* ===== INVENTORY/CLASSIFICATION VIEW ===== */
-#inv-display {
-  background-color: #ffffff; /* Add white background */
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-}
-
-#inv-display h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-dark);
-  background-color: transparent; 
-  padding: 0;
-  font-weight: bold;
-}
-
-#inv-display ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex; /* Changed to flexbox */
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: flex-start;
-}
-
-#inv-display li {
-  background-color: #ffffff;
-  border: 2px solid var(--primary-color);
-  border-radius: 8px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  flex: 0 1 calc(33.333% - 1rem); /* 3 columns */
-  min-width: 250px;
-}
-
-#inv-display li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-#inv-display li img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-  border-radius: 4px;
-  margin: 0 auto 1rem;
-  background-color: transparent; /* Remove gray background */
-}
-
-#inv-display li h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: var(--link-color);
-  font-weight: bold;
-  padding: 0;
-  background-color: transparent;
-}
-
-#inv-display li span {
-  display: block;
-  font-weight: bold;
-  color: var(--text-dark);
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 900px) {
-  #inv-display li {
-    flex: 0 1 calc(50% - 1rem); /* 2 columns on medium screens */
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #inv-display li {
-    flex: 0 1 100%; /* 1 column on small screens */
-  }
-}
-
-
-/* ===== NAVIGATION ===== */
-.site-navigation {
-  background-color: var(--nav-bg);
-  margin-bottom: 1.5rem;
-}
-
-.site-navigation nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.site-navigation nav ul li {
-  flex: 1 1 auto;
-  min-width: 80px;
-  text-align: center;
-}
-
-.site-navigation nav ul li a {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: var(--text-light); /* Make sure this is white */
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-  font-size: 0.95rem;
-}
-
-.site-navigation nav ul li a:hover,
-.site-navigation nav ul li a:focus {
-  background-color: #3c3c3c;
-  text-decoration: none;
-}
-
-/* ===== INVENTORY/CLASSIFICATION VIEW ===== */
-#inv-display {
-  background-color: transparent; 
-  padding: 20px 200px;
-  margin-bottom: 1.5rem;
-}
-
-#inv-display h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #000000;
-  background-color: #ffffff;
-  padding: 0.75rem 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: block;
-  width: 100%;
-}
-
-#inv-display ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: flex-start;
-}
-#inv-display li {
-  background-color: #ffffff;
-  border: 2px solid var(--primary-color);
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  flex: 0 1 calc(33.333% - 1rem); /* 3 columns on large screens */
-  min-width: 250px;
-}
-
-
-#inv-display h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-dark);
-  background-color: #ffffff;
-  padding: 0.75rem 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: inline-block; /* Add this */
-  width: auto; /* Add this */
-}
-
-#inv-display li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-
-/* #inv-display li img {
-  width: 100%;
-  height: 160px; 
-  object-fit: contain;
-  border-radius: 4px;
-  margin: 0 auto 0.75rem; 
-  background-color: transparent;
-} */#inv-display li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-#inv-display li img {
-  width: 100%;
-  height: 160px;
-  object-fit: contain;
-  border-radius: 4px;
-  margin: 0 auto 0.75rem;
-  background-color: transparent;
-}
-
-#inv-display li h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: var(--link-color);
-  font-weight: bold;
-  padding: 0;
-  background-color: transparent;
-}
-
-#inv-display li span {
-  display: block;
-  font-weight: bold;
-  color: var(--text-dark);
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-}
-
-/* Responsive adjustments */
-/* Medium screens - 2 columns */
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   #inv-display li {
     flex: 0 1 calc(50% - 1rem);
   }
 }
 
-/* Small screens - 1 column (stacked) */
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   #inv-display li {
     flex: 0 1 100%;
   }
-  
-  #inv-display h2 {
-    font-size: 1.25rem;
-  }
-}
-/* ===== FLASH MESSAGES ===== */
-/* .notice,
-.message,
-.flash-message {
-  background-color: #d1ecf1;
-  border-left: 4px solid #0c5460;
-  border-radius: 4px;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.5rem;
-  color: #0c5460;
-  font-size: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.error,
-.error-message {
-  background-color: #f8d7da;
-  border-left: 4px solid #721c24;
-  border-radius: 4px;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.5rem;
-  color: #721c24;
-  font-size: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-} */
-
-/* .success,
-.success-message {
-  background-color: #d4edda;
-  border-left: 4px solid #155724;
-  border-radius: 4px;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.5rem;
-  color: #155724;
-  font-size: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-} */
-
-/* .warning,
-.warning-message {
-  background-color: #fff3cd;
-  border-left: 4px solid #856404;
-  border-radius: 4px;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.5rem;
-  color: #856404;
-  font-size: 1rem;
-  box-shadow: 0 2px 4px rgba(233, 229, 229, 0.934);
-} */
-
-h1, h2, p { 
-  color: #1E90FF; /* or a bright color */
-  text-transform: capitalize;
-}
-/* *****************8 */
-/* ===== VEHICLE DETAIL PAGE ===== */
-.vehicle-detail {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin: 2rem 0;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  align-items: flex-start;
-}
-
-.vehicle-detail img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  flex: 1 1 400px;
-  border-radius: 8px;
-  border: 2px solid var(--border-color);
-  object-fit: cover;
-}
-
-.vehicle-info {
-  flex: 1 1 400px;
-  min-width: 300px;
-}
-
-.vehicle-info h2 {
-  font-size: 2rem;
-  color: var(--text-dark);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
-  border-bottom: 3px solid var(--accent-cyan);
-  padding-bottom: 0.5rem;
-}
-
-.vehicle-info p {
-  margin: 1rem 0;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #555;
-}
-
-.vehicle-info strong {
-  color: var(--text-dark);
-  font-weight: 700;
-  display: inline-block;
-  min-width: 120px;
-}
-
-/* Highlight price */
-.vehicle-info p:has(strong:contains("Price")) {
-  font-size: 1.3rem;
-  color: var(--primary-color);
-  font-weight: bold;
-}
-
-/* Style the description differently */
-.vehicle-info p:nth-child(4) {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background-color: var(--background-light);
-  border-left: 4px solid var(--accent-cyan);
-  border-radius: 4px;
-}
-
-/* Responsive - stacked on mobile */
-@media (max-width: 768px) {
-  .vehicle-detail {
-    flex-direction: column;
-    padding: 1.5rem;
-    gap: 1.5rem;
-  }
-
-  .vehicle-detail img {
-    max-width: 100%;
-  }
-
-  .vehicle-info h2 {
-    font-size: 1.5rem;
-  }
-
-  .vehicle-info p {
-    font-size: 1rem;
-  }
-}
-
-/* Larger screens - better spacing */
-@media (min-width: 1024px) {
-  .vehicle-detail {
-    padding: 2.5rem;
-    gap: 3rem;
-  }
-
-  .vehicle-detail img {
-    max-width: 600px;
-  }
-
-  .vehicle-info h2 {
-    font-size: 2.25rem;
-  }
-}
-
-/* Back link styling */
-.back-link {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--nav-bg);
-  color: var(--text-light);
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  transition: background-color 0.3s ease;
-}
-
-.back-link:hover {
-  background-color: #3c3c3c;
-  text-decoration: none;
 }
