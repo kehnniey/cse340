@@ -1,10 +1,5 @@
-/* ******************************************
- * This server.js file is the primary file of the 
- * application. It is used to control the project.
- *******************************************/
-/* ***********************
- * Require Statements
- *************************/
+
+/* ***Require Statements*****/
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
@@ -16,17 +11,12 @@ const utilities = require("./utilities/")
 
 
 
-
-/* ***********************
- * View Engine and Templates
- *************************/
+/* **View Engine and Templates****/
 app.set("view engine", "ejs")
 app.use(expressLayouts)
-app.set("layout", "./layouts/layout") // not at views root
+app.set("layout", "./layouts/layout") 
 
-/* ***********************
- * Static Files Middleware
- *************************/
+/* ***Static Files Middleware*****/
 app.use(express.static("public"))
 
 
@@ -39,15 +29,17 @@ app.use(express.static("public"))
 //   res.render("index", {title: "Home"})
 // })
 // app.get("/", baseController.buildHome)
-// Index route
+
+// Index route with error handling
 app.get("/", utilities.handleErrors(baseController.buildHome))
-// Inventory routes
+
+// Inventory routes mounted 
 app.use("/inv", inventoryRoute)
 
 // Static routes
 app.use(static)
 
-// File Not Found Route - must be last route in list
+// 404 Route - Handles missing pages
 app.use(async (req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'})
 })
@@ -68,10 +60,8 @@ app.use(async (req, res, next) => {
 // })
 
 
-/* ***********************
-* Express Error Handler
-* Place after all other middleware
-*************************/
+// /Express Error Handler - Catches and displays errors
+
 app.use(async (err, req, res, next) => {
   let nav = await utilities.getNav()
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
@@ -84,16 +74,15 @@ app.use(async (err, req, res, next) => {
 })
 
 
-/* ***********************
- * Local Server Information
- * Values from .env (environment) file
- *************************/
+
+// Local Server Information
+ 
 const port = process.env.PORT
 const host = process.env.HOST
 
-/* ***********************
- * Log statement to confirm server operation
- *************************/
+
+//  * Log statement to confirm server operation
+
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
 })

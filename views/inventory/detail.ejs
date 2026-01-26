@@ -1,11 +1,16 @@
+<!-- Vehicle Detail View -->
+
+<!-- Page Title -->
 <% if (title) { %>
   <h1 class="detail-title"><%= title %></h1>
 <% } else { 
   res.locals.title = "Vehicle Details"
 } %>
 
+<!-- Back Navigation Message -->
 <p class="back-message">
   You can <a href="/inv/type/<%= classificationId %>" class="back-link">return</a> back to the previous page.
 </p>
 
+<!-- Vehicle Detail Content -->
 <%- detailHTML %>

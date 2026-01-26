@@ -1,9 +1,8 @@
 const invModel = require("../models/inventory-model")
 const Util = {}
 
-/* ************************
- * Constructs the nav HTML unordered list
- ************************** */
+/* **Constructs the nav HTML unordered list************ */
+
 Util.getNav = async function (req, res, next) {
   let data = await invModel.getClassifications()
   let list = "<ul>"
@@ -24,9 +23,7 @@ Util.getNav = async function (req, res, next) {
   return list
 }
 
-/* ************************
- * Format price with commas and dollar sign
- ************************** */
+/* **Format price with commas and dollar sign************ */
 Util.formatPrice = function(price) {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -36,9 +33,8 @@ Util.formatPrice = function(price) {
   }).format(price)
 }
 
-/* **************************************
-* Build the classification view HTML
-* ************************************ */
+/* ***Build the classification view HTML******* */
+
 Util.buildClassificationGrid = async function(data){
   let grid
   if(data.length > 0){
@@ -68,9 +64,8 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
-/* **************************************
-* Build vehicle detail view HTML
-* ************************************ */
+/* ***Build vehicle detail view HTML********* */
+
 Util.buildVehicleDetail = function (vehicle) {
   const price = Util.formatPrice(vehicle.inv_price)
   const mileage = new Intl.NumberFormat("en-US").format(vehicle.inv_miles)
@@ -92,11 +87,9 @@ Util.buildVehicleDetail = function (vehicle) {
   `
 }
 
-/* ****************************************
- * Middleware For Handling Errors
- * Wrap other function in this for 
- * General Error Handling
- **************************************** */
+
+//  * General Error Handling
+
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
 module.exports = Util

@@ -1,11 +1,11 @@
+// Required Resources
 const invModel = require("../models/inventory-model")
 const utilities = require("../utilities/")
 
 const invCont = {}
 
-/* ***************************
- *  Build inventory by classification view
- * ************************** */
+// Build inventory by classification view
+ 
 invCont.buildByClassificationId = async function (req, res, next) {
   const classification_id = req.params.classificationId
   const data = await invModel.getInventoryByClassificationId(classification_id)
@@ -28,9 +28,9 @@ invCont.buildByClassificationId = async function (req, res, next) {
   })
 }
 
-/* ***************************
- *  Build vehicle detail view
- * ************************** */
+
+// Build vehicle detail view
+
 invCont.buildInventoryDetail = async function (req, res, next) {
   const inv_id = parseInt(req.params.inv_id)
   const vehicle = await invModel.getInventoryById(inv_id)
@@ -52,12 +52,12 @@ invCont.buildInventoryDetail = async function (req, res, next) {
   })
 }
 
-/* ***************************
- *  Intentional 500 error for testing
- * ************************** */
+
+// Intentional 500 error for testing
+
 invCont.triggerError = async function (req, res, next) {
   throw new Error("Intentional Server Error")
 }
 
-/* Export the controller object */
+// Export the controller object 
 module.exports = invCont
