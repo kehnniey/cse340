@@ -7,7 +7,12 @@ const app = express()
 const static = require("./routes/static")
 const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
+const accountRoute = require("./routes/accountRoute")
 const utilities = require("./utilities/")
+const session = require("express-session")
+const pool = require('./database/')
+
+
 
 
 
@@ -15,6 +20,29 @@ const utilities = require("./utilities/")
 app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout") 
+
+/* ***Session Middleware *****/
+app.use(session({
+  store: new (require('connect-pg-simple')(session))({
+    createTableIfMissing: true,
+    pool,
+  }),
+  secret: process.env.SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true,
+  name: 'sessionId',
+}))
+
+
+// Express Messages Middleware
+app.use(require('connect-flash')())
+app.use(function(req, res, next){
+  res.locals.messages = require('express-messages')(req, res)
+  next()
+})
+
+
+
 
 /* ***Static Files Middleware*****/
 app.use(express.static("public"))
@@ -36,6 +64,9 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 // Inventory routes mounted 
 app.use("/inv", inventoryRoute)
 
+// Account routes mounted
+app.use("/account", accountRoute)
+
 // Static routes
 app.use(static)
 
@@ -45,19 +76,7 @@ app.use(async (req, res, next) => {
 })
 
 
-/* ***********************
-* Express Error Handler
-* Place after all other middleware
-*************************/
-// app.use(async (err, req, res, next) => {
-//   let nav = await utilities.getNav()
-//   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
-//   res.render("errors/error", {
-//     title: err.status || 'Server Error',
-//     message: err.message,
-//     nav
-//   })
-// })
+
 
 
 // /Express Error Handler - Catches and displays errors

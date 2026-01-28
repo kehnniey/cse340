@@ -2,7 +2,9 @@ const invModel = require("../models/inventory-model")
 const Util = {}
 
 /* **Constructs the nav HTML unordered list************ */
-
+/* ************************
+ * Constructs the nav HTML unordered list
+ ************************** */
 Util.getNav = async function (req, res, next) {
   let data = await invModel.getClassifications()
   let list = "<ul>"
@@ -19,6 +21,8 @@ Util.getNav = async function (req, res, next) {
       "</a>"
     list += "</li>"
   })
+  // Add My Account link to navigation
+  // list += '<li><a href="/account/login" title="Click to log in">My Account</a></li>'
   list += "</ul>"
   return list
 }
@@ -63,6 +67,7 @@ Util.buildClassificationGrid = async function(data){
   }
   return grid
 }
+
 
 /* ***Build vehicle detail view HTML********* */
 
