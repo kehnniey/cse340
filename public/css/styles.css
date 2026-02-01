@@ -583,3 +583,280 @@ h1,h2,p {
 .notice li {
   margin-bottom: 0.5rem;
 }
+
+/* Wk4: Inventory Management View Styles */
+
+/* ===== INVENTORY MANAGEMENT VIEW ===== */
+.inv-management {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.inv-management h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #000000;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.inv-management > p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.management-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.management-card {
+  background-color: #f5f5f5;
+  border: 3px solid #000000;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.management-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  border-color: #00bcd4;
+}
+
+.management-card h2 {
+  color: #000000;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.management-card p {
+  color: #333333;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.management-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #00bcd4;
+  color: #000000;
+  border: 3px solid #000000;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.management-btn:hover {
+  background-color: #000000;
+  color: #00bcd4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .management-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============Week 4=================================== */
+/* ===== ADD CLASSIFICATION VIEW ===== */
+.add-classification {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-classification h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.instruction {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  color: #856404;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.classification-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.classification-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.classification-form input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #dee2e6;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.classification-form input:focus {
+  outline: none;
+  border-color: #00bcd4;
+}
+
+.add-classification-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #00bcd4;
+  color: #000000;
+  border: 3px solid #000000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.add-classification-btn:hover {
+  background-color: #000000;
+  color: #00bcd4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.back-link a {
+  color: #0066cc;
+  font-weight: 600;
+}
+
+/* Week4 */
+/* ===== ADD INVENTORY VIEW ===== */
+.add-inventory {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-inventory h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.inventory-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.inventory-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Full width for description and classification */
+.inventory-form label:first-child,
+.inventory-form label:nth-child(5) {
+  grid-column: 1 / -1;
+}
+
+.inventory-form input,
+.inventory-form textarea,
+.inventory-form select {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #dee2e6;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.inventory-form input:focus,
+.inventory-form textarea:focus,
+.inventory-form select:focus {
+  outline: none;
+  border-color: #00bcd4;
+}
+
+.inventory-form textarea {
+  resize: vertical;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: normal;
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+.add-inventory-btn {
+  grid-column: 1 / -1;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #00bcd4;
+  color: #000000;
+  border: 3px solid #000000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.add-inventory-btn:hover {
+  background-color: #000000;
+  color: #00bcd4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive - single column on mobile */
+@media screen and (max-width: 768px) {
+  .inventory-form {
+    grid-template-columns: 1fr;
+  }
+
+  .inventory-form label:first-child,
+  .inventory-form label:nth-child(5) {
+    grid-column: 1;
+  }
+}

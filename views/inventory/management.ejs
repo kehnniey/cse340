@@ -1,0 +1,29 @@
+<!-- wk4: inventory management view -->
+
+<!-- Page title -->
+<h1><%= title %></h1>
+
+<!--  Flash messages display -->
+<% if (typeof messages !== 'undefined' && messages) { %>
+  <%- messages() %>
+<% } %>
+
+<main class="inv-management">
+  <p>Use the links below to manage your vehicle inventory:</p>
+
+  <div class="management-links">
+    <!-- Link to add new classification -->
+    <div class="management-card">
+      <h2>Add Classification</h2>
+      <p>Add a new vehicle classification to the system</p>
+      <a href="/inv/add-classification" class="management-btn">Add New Classification</a>
+    </div>
+
+    <!-- Link to add new inventory -->
+    <div class="management-card">
+      <h2>Add Vehicle</h2>
+      <p>Add a new vehicle to the inventory</p>
+      <a href="/inv/add-inventory" class="management-btn">Add New Vehicle</a>
+    </div>
+  </div>
+</main>

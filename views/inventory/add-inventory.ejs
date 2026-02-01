@@ -1,0 +1,164 @@
+<!-- Week4 -->
+
+<!-- Page title -->
+<h1><%= title %></h1>
+
+<!--Flash messages display -->
+<% if (typeof messages !== 'undefined' && messages) { %>
+  <%- messages() %>
+<% } %>
+
+<!--Display validation errors -->
+<% if (errors) { %>
+  <ul class="notice">
+    <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+    <%  }) %>
+  </ul>
+<% } %>
+
+<main class="add-inventory">
+  <p class="instruction">* All fields are required</p>
+
+  <!--Add inventory form -->
+  <form method="post" action="/inv/add-inventory" class="inventory-form">
+    
+    <!-- Classification Dropdown -->
+    <label for="classificationList">
+      Classification
+      <%- classificationList %>
+    </label>
+
+    <!-- Make -->
+    <label for="inv_make">
+      Make
+      <input
+        type="text"
+        id="inv_make"
+        name="inv_make"
+        required
+        minlength="3"
+        value="<%= locals.inv_make || '' %>"
+        placeholder="Enter vehicle make (e.g., Toyota)"
+      >
+    </label>
+
+    <!-- Model -->
+    <label for="inv_model">
+      Model
+      <input
+        type="text"
+        id="inv_model"
+        name="inv_model"
+        required
+        minlength="3"
+        value="<%= locals.inv_model || '' %>"
+        placeholder="Enter vehicle model (e.g., Camry)"
+      >
+    </label>
+
+    <!-- Year -->
+    <label for="inv_year">
+      Year
+      <input
+        type="text"
+        id="inv_year"
+        name="inv_year"
+        required
+        pattern="^\d{4}$"
+        maxlength="4"
+        value="<%= locals.inv_year || '' %>"
+        placeholder="Enter 4-digit year (e.g., 2024)"
+      >
+    </label>
+
+    <!-- Description -->
+    <label for="inv_description">
+      Description
+      <textarea
+        id="inv_description"
+        name="inv_description"
+        required
+        rows="4"
+        placeholder="Enter vehicle description"
+      ><%= locals.inv_description || '' %></textarea>
+    </label>
+
+    <!-- Image Path -->
+    <label for="inv_image">
+      Image Path
+      <input
+        type="text"
+        id="inv_image"
+        name="inv_image"
+        required
+        value="<%= locals.inv_image || '/images/vehicles/no-image.png' %>"
+        placeholder="/images/vehicles/vehicle-name.jpg"
+      >
+      <span class="hint">Default: /images/vehicles/no-image.png</span>
+    </label>
+
+    <!-- Thumbnail Path -->
+    <label for="inv_thumbnail">
+      Thumbnail Path
+      <input
+        type="text"
+        id="inv_thumbnail"
+        name="inv_thumbnail"
+        required
+        value="<%= locals.inv_thumbnail || '/images/vehicles/no-image-tn.png' %>"
+        placeholder="/images/vehicles/vehicle-name-tn.jpg"
+      >
+      <span class="hint">Default: /images/vehicles/no-image-tn.png</span>
+    </label>
+
+    <!-- Price -->
+    <label for="inv_price">
+      Price
+      <input
+        type="number"
+        id="inv_price"
+        name="inv_price"
+        required
+        min="0"
+        step="0.01"
+        value="<%= locals.inv_price || '' %>"
+        placeholder="Enter price (e.g., 25000)"
+      >
+    </label>
+
+    <!-- Miles -->
+    <label for="inv_miles">
+      Mileage
+      <input
+        type="number"
+        id="inv_miles"
+        name="inv_miles"
+        required
+        min="0"
+        value="<%= locals.inv_miles || '' %>"
+        placeholder="Enter mileage (e.g., 15000)"
+      >
+    </label>
+
+    <!-- Color -->
+    <label for="inv_color">
+      Color
+      <input
+        type="text"
+        id="inv_color"
+        name="inv_color"
+        required
+        value="<%= locals.inv_color || '' %>"
+        placeholder="Enter vehicle color (e.g., Silver)"
+      >
+    </label>
+
+    <!-- Submit Button -->
+    <button type="submit" class="add-inventory-btn">Add Vehicle</button>
+  </form>
+
+  <p class="back-link">
+    <a href="/inv/">← Back to Management</a>
+  </p>
+</main>
