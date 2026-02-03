@@ -4,26 +4,27 @@ const accountModel = require("../models/account-model")
 
 const validate = {}
 
-/*  **********************************
- *  Registration Data Validation Rules
- * ********************************* */
+/*  *************week4********************** */
+
+//  *  Registration Data Validation Rules
+ 
 validate.registrationRules = () => {
   return [
-    // firstname is required and must be string
+    // firstname string
     body("account_firstname")
       .trim()
       .escape()
       .notEmpty()
       .withMessage("Please provide a first name."),
 
-    // lastname is required and must be string
+    // lastname tring
     body("account_lastname")
       .trim()
       .escape()
       .notEmpty()
       .withMessage("Please provide a last name."),
 
-    // valid email is required and cannot already exist in the DB
+    // valid email required and cannot exist in the DB
     body("account_email")
       .trim()
       .isEmail()
@@ -40,7 +41,7 @@ validate.registrationRules = () => {
         console.log(">>> Email is available")
       }),
 
-    // password is required and must be strong password
+    // strong password password required 
     body("account_password")
       .notEmpty()
       .isStrongPassword({

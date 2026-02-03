@@ -45,8 +45,10 @@ validate.checkClassificationData = async (req, res, next) => {
 
 
 /*  ************Week4*****************
+
  *  Inventory Data Validation Rules
  * ********************************* */
+
 validate.inventoryRules = () => {
   return [
     // Make is required, min 3 characters

@@ -42,6 +42,10 @@ async function getInventoryById(inv_id) {
   }
 }
 
+
+
+/* ***********Week4********** */
+
 /* WK4: Add new classification to database */
 
 async function addClassification(classification_name) {
@@ -54,9 +58,8 @@ async function addClassification(classification_name) {
 }
 
 
-/* ***********Week4**********
- * Add new vehicle to inventory
- * ************************** */
+//  Add new vehicle to inventory
+
 async function addInventory(
   inv_make,
   inv_model,

@@ -53,7 +53,7 @@ invCont.buildInventoryDetail = async function (req, res, next) {
 }
 
 
-/* ***************************
+/* ************WEEK4***************
  * Build inventory management view
  * wk4, Management View
  * ************************** */
@@ -187,9 +187,6 @@ invCont.addInventory = async function (req, res) {
 invCont.triggerError = async function (req, res, next) {
   throw new Error("Intentional Server Error")
 }
-
-
-
 
 // Export the controller object 
 module.exports = invCont

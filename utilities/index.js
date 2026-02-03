@@ -94,9 +94,11 @@ Util.buildVehicleDetail = function (vehicle) {
 
 
 /* **************week4******************
+
  * Build classification select list
  * Used in add/edit inventory forms
  * ************************************ */
+
 Util.buildClassificationList = async function (classification_id = null) {
   let data = await invModel.getClassifications()
   let classificationList =
@@ -119,5 +121,6 @@ Util.buildClassificationList = async function (classification_id = null) {
 //  * General Error Handling
 
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
+
 
 module.exports = Util

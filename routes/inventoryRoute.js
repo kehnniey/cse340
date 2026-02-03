@@ -11,7 +11,9 @@ router.get("/type/:classificationId", utilities.handleErrors(invController.build
 // Route for vehicle detail page
 router.get("/detail/:inv_id", utilities.handleErrors(invController.buildInventoryDetail))
 
+
 //   *************week4**********************
+
 // wk4: Route to display inventory management view
 router.get("/", utilities.handleErrors(invController.buildManagement))
 
@@ -23,6 +25,7 @@ router.get("/add-classification", utilities.handleErrors(invController.buildAddC
 router.post(
   "/add-classification", invValidate.classificationRules(), invValidate.checkClassificationData, utilities.handleErrors(invController.addClassification))
 
+
 //   *************week4**********************
 // Route to display add inventory view
 router.get("/add-inventory", utilities.handleErrors(invController.buildAddInventory))
@@ -32,5 +35,6 @@ router.post( "/add-inventory", invValidate.inventoryRules(), invValidate.checkIn
 
 // Route to trigger intentional 500 error
 router.get("/trigger-error", utilities.handleErrors(invController.triggerError))
+
 
 module.exports = router
