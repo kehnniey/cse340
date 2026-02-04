@@ -10,6 +10,7 @@ const accountRoute = require("./routes/accountRoute")
 const utilities = require("./utilities/")
 const session = require("express-session")
 const pool = require('./database/')
+const cookieParser = require("cookie-parser")
 
 /* **View Engine and Templates****/
 app.set("view engine", "ejs")
@@ -44,6 +45,11 @@ app.use(express.static("public"))
  *************************/
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+/* ***********************
+ * Cookie Parser Middleware
+ *************************/
+app.use(cookieParser())
 
 /* ***********************
  * Routes

@@ -5,7 +5,7 @@
 <% } %>
 
 <main class="account-login">
-  <form method="post" action="/account/login" class="login-form">
+  <form id="loginForm" method="post" action="/account/login" class="login-form">
     
     <label for="account_email">
       Email Address
@@ -25,12 +25,9 @@
         id="account_password"
         name="account_password"
         required
-        minlength="8"
-        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-        title="Password must be at least 8 characters and contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character (@$!%*?&)"
+        minlength="12"
         placeholder="Enter your password"
       >
-      <span class="password-hint">Must be at least 8 characters with uppercase, lowercase, number, and special character</span>
     </label>
 
     <button type="submit" class="login-btn">Login</button>

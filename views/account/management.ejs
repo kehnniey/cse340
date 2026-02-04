@@ -1,0 +1,16 @@
+<!-- WEEK 5: Account Management View -->
+
+<!-- Page title -->
+<h1><%= title %></h1>
+
+<!--  Flash messages display -->
+<% if (typeof messages !== 'undefined' && messages) { %>
+  <%- messages() %>
+<% } %>
+
+<main class="account-management">
+  <h2>You're logged in</h2>
+  <p>Welcome to your account management dashboard.</p>
+</main>
+
+
