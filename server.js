@@ -51,6 +51,13 @@ app.use(express.urlencoded({ extended: true }))
  *************************/
 app.use(cookieParser())
 
+
+/* **********Week5*************
+ * JWT Token Check Middleware
+ * Checks validity of JWT token on every request
+ *************************/
+app.use(utilities.checkJWTToken)
+
 /* ***********************
  * Routes
  *************************/

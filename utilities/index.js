@@ -145,6 +145,22 @@ Util.checkJWTToken = (req, res, next) => {
   next()
  }
 }
+
+
+
+/* ***********WEEK5*****************************
+ *  Check Login
+ * ************************************ */
+ Util.checkLogin = (req, res, next) => {
+  if (res.locals.loggedin) {
+    next()
+  } else {
+    req.flash("notice", "Please log in.")
+    return res.redirect("/account/login")
+  }
+ }
+
+
 //  * General Error Handling
 
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
