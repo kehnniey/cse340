@@ -1,6 +1,6 @@
 <!-- WEEK4: inventory management view --> 
 
-<!-- Page title -->
+<!--  Page title -->
 <h1><%= title %></h1>
 
 <!--  Flash messages display -->
@@ -11,6 +11,7 @@
 <main class="inv-management">
   <p>Use the links below to manage your vehicle inventory:</p>
 
+  <!-- Week 4: Add Classification and Add Vehicle Links -->
   <div class="management-links">
     <!-- Link to add new classification -->
     <div class="management-card">
@@ -25,5 +26,22 @@
       <p>Add a new vehicle to the inventory</p>
       <a href="/inv/add-inventory" class="management-btn">Add New Vehicle</a>
     </div>
-  </div>
+  </div> <!-- End of management-links -->
+
+  <!-- Week 5: Manage Inventory Section -->
+  <h2>Manage Inventory</h2>
+  <p>Choose a classification from the list to see the items in inventory.</p>
+
+  <!-- Classification select list -->
+  <%- classificationSelect %>
+
+  <!-- Empty table for inventory display -->
+  <table id="inventoryDisplay"></table>
+
+  <!-- Noscript message -->
+  <noscript>JavaScript must be enabled to use this page.</noscript>
+
 </main>
+
+<!--Link to JavaScript file -->
+<script src="/js/inventory.js"></script>

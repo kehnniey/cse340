@@ -1,6 +1,6 @@
-<!-- Week4 -->
+<!-- Week5 -->
 
-  <!-- Add Inventory View --> 
+  <!-- Add New Vehicle → Edit Vehicle--> 
    
 <!-- Page title -->
 <h1><%= title %></h1>
@@ -23,12 +23,15 @@
   <p class="instruction">* All fields are required</p>
 
   <!--Add inventory form -->
-  <form id="updateForm" method="post" action="/inv/add-inventory" class="inventory-form">
+  <form method="post" action="/inv/update" class="inventory-form">
+
+    <!-- Hidden input to hold inv_id -->    
+    <input type="hidden" name="inv_id" value="<%= locals.inv_id %>">
     
     <!-- Classification Dropdown -->
     <label for="classificationList">
       Classification
-      <%- classificationList %>
+      <%- classificationSelect %> //Week5: Reuse classification select list from add-inventory view
     </label>
 
     <!-- Make -->
@@ -157,11 +160,10 @@
     </label>
 
     <!-- Submit Button -->
-    <button type="submit" class="inventory-btn" disabled>Add Vehicle</button>
+    <button type="submit" class="inventory-btn">Update Vehicle</button>
   </form>
 
   <p class="back-link">
     <a href="/inv/">← Back to Management</a>
   </p>
 </main>
-<script src="/js/inv-update.js"></script>

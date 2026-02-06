@@ -33,8 +33,20 @@ router.get("/add-inventory", utilities.handleErrors(invController.buildAddInvent
 // Route to process new inventory
 router.post( "/add-inventory", invValidate.inventoryRules(), invValidate.checkInventoryData, utilities.handleErrors(invController.addInventory))
 
+
+//   *************week5*********************
+// Route to get inventory by classification for AJAX
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+
+// Route to build edit inventory view
+router.get("/edit/:inv_id", utilities.handleErrors(invController.editInventoryView))
+
+// Route to process inventory update
+router.post("/update", invValidate.inventoryRules(), invValidate.checkUpdateData, utilities.handleErrors(invController.updateInventory))
+
 // Route to trigger intentional 500 error
 router.get("/trigger-error", utilities.handleErrors(invController.triggerError))
+
 
 
 module.exports = router
