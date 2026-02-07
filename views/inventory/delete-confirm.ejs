@@ -1,0 +1,83 @@
+<!-- Week5 -->
+<!-- Page title -->
+<h1><%= title %></h1>
+
+<!--Flash messages display -->
+<% if (typeof messages !== 'undefined' && messages) { %>
+  <%- messages() %>
+<% } %>
+
+<!--Display validation errors -->
+<% if (errors) { %>
+  <ul class="notice">
+    <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+    <%  }) %>
+  </ul>
+<% } %>
+
+<main class="add-inventory">
+  <p class="instruction"><strong>Confirm Deletion - The delete is permanent.</strong></p>
+
+  <!--Delete confirmation form -->
+  <form method="post" action="/inv/delete" class="inventory-form">
+    
+    <!-- HIDDEN FIELD - inv_id -->
+    <input type="hidden" name="inv_id" value="<%= locals.inv_id %>">
+
+    <!-- Make (readonly) -->
+    <label for="inv_make">
+      Make
+      <input
+        type="text"
+        id="inv_make"
+        name="inv_make"
+        value="<%= locals.inv_make %>"
+        readonly
+      >
+    </label>
+
+    <!-- Model (readonly) -->
+    <label for="inv_model">
+      Model
+      <input
+        type="text"
+        id="inv_model"
+        name="inv_model"
+        value="<%= locals.inv_model %>"
+        readonly
+      >
+    </label>
+
+    <!-- Year (readonly) -->
+    <label for="inv_year">
+      Year
+      <input
+        type="text"
+        id="inv_year"
+        name="inv_year"
+        value="<%= locals.inv_year %>"
+        readonly
+      >
+    </label>
+
+    <!-- Price (readonly) -->
+    <label for="inv_price">
+      Price
+      <input
+        type="number"
+        id="inv_price"
+        name="inv_price"
+        value="<%= locals.inv_price %>"
+        readonly
+      >
+    </label>
+
+    <!-- Delete Button -->
+    <button type="submit" class="add-inventory-btn">Delete Vehicle</button>
+  </form>
+
+  <p class="back-link">
+    <a href="/inv/">← Back to Management</a>
+  </p>
+</main>

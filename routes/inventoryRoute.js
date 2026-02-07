@@ -44,6 +44,16 @@ router.get("/edit/:inv_id", utilities.handleErrors(invController.editInventoryVi
 // Route to process inventory update
 router.post("/update", invValidate.inventoryRules(), invValidate.checkUpdateData, utilities.handleErrors(invController.updateInventory))
 
+// Week 5: Team Activity
+
+// Route to build delete confirmation view
+router.get("/delete/:inv_id", utilities.handleErrors(invController.deleteView))
+
+// Route to process inventory deletion
+router.post("/delete", utilities.handleErrors(invController.deleteItem))
+
+
+
 // Route to trigger intentional 500 error
 router.get("/trigger-error", utilities.handleErrors(invController.triggerError))
 
