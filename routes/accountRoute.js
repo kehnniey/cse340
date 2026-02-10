@@ -33,6 +33,29 @@ router.post(
   utilities.handleErrors(accountController.accountLogin)
 )
 
+// Week 5: Assignment
 
+// Route to build account update view
+router.get("/update/:account_id", utilities.handleErrors(accountController.buildAccountUpdate))
+
+// Route to process account update
+router.post(
+  "/update",
+  regValidate.updateAccountRules(),
+  regValidate.checkAccountUpdateData,
+  utilities.handleErrors(accountController.updateAccount)
+)
+
+// Route to process password change
+router.post(
+  "/change-password",
+  regValidate.passwordRules(),
+  regValidate.checkPasswordData,
+  utilities.handleErrors(accountController.changePassword)
+)
+
+
+// Route for logout
+router.get("/logout", utilities.handleErrors(accountController.accountLogout))
 
 module.exports = router

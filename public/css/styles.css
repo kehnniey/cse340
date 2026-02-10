@@ -919,3 +919,81 @@ input[readonly] {
   cursor: not-allowed;
   color: #6c757d;
 }
+/* Week5 Assignment*/
+/* ===== UPDATE VIEW ===== */
+
+/* Account Update Page */
+.account-update {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.account-update h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.5rem;
+}
+
+.account-update form {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.account-update label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.account-update input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  border: 2px solid #dee2e6;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.account-update button {
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.account-update button:hover {
+  background-color: #333;
+}
+
+.password-info {
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.back-link {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.back-link a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+

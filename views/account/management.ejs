@@ -1,16 +1,25 @@
-<!-- WEEK 5: Account Management View -->
+<!-- WEEK 5 Activity and Assignment: Account Management View -->
 
 <!-- Page title -->
 <h1><%= title %></h1>
 
-<!--  Flash messages display -->
+<!-- Flash messages display -->
 <% if (typeof messages !== 'undefined' && messages) { %>
   <%- messages() %>
 <% } %>
 
 <main class="account-management">
-  <h2>You're logged in</h2>
-  <p>Welcome to your account management dashboard.</p>
+  <!-- Personalized greeting -->
+  <h2>Welcome <%= locals.accountData.account_firstname %></h2>
+
+  <!-- Update account link (for all users) -->
+  <p><a href="/account/update/<%= locals.accountData.account_id %>">Update Account Information</a></p>
+
+  <!-- Inventory Management link (Employee/Admin only) -->
+  <% if (locals.accountData.account_type === 'Employee' || locals.accountData.account_type === 'Admin') { %>
+    <h3>Inventory Management</h3>
+    <p><a href="/inv/">Manage Inventory</a></p>
+  <% } %>
 </main>
 
 

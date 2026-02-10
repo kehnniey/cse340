@@ -1,4 +1,24 @@
+<!-- /* new version: week 5 Assignment */ -->
 <header class="site-header">
+  <div class="header-wrapper">
+    <div class="site-name">
+      <a href="/" title="Return to home page">CSE Motors</a>
+    </div>
+    <div class="tools">
+      <% if (locals.loggedin) { %>
+        <!-- Show when logged in -->
+        <a href="/account/" title="Click to access account management">Welcome <%= locals.accountData.account_firstname %></a>
+        <a href="/account/logout" title="Click to log out">Logout</a>
+      <% } else { %>
+        <!-- Show when logged out -->
+        <a href="/account/login" title="Click to log in">My Account</a>
+      <% } %>
+    </div>
+  </div>
+</header>
+
+<!-- /* old version */ -->
+<!-- <header class="site-header">
   <div class="header-wrapper">
     <div class="site-name">
       <a href="/" title="Return to home page">CSE Motors</a>
@@ -7,4 +27,4 @@
       <a href="/account/login" title="Click to log in">My Account</a>
     </div>
   </div>
-</header>
+</header> -->

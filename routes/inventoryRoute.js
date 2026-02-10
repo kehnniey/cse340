@@ -52,7 +52,26 @@ router.get("/delete/:inv_id", utilities.handleErrors(invController.deleteView))
 // Route to process inventory deletion
 router.post("/delete", utilities.handleErrors(invController.deleteItem))
 
+// Week 5: Management view - requires Employee/Admin
 
+// Add inventory - requires Employee/Admin
+router.get("/add-inventory", utilities.checkAccountType, utilities.handleErrors(invController.buildAddInventory))
+router.post("/add-inventory", utilities.checkAccountType, invValidate.inventoryRules(), invValidate.checkInventoryData, utilities.handleErrors(invController.addInventory))
+
+// Edit - requires Employee/Admin
+router.get("/edit/:inv_id", utilities.checkAccountType, utilities.handleErrors(invController.editInventoryView))
+router.post("/update", utilities.checkAccountType, invValidate.inventoryRules(), invValidate.checkUpdateData, utilities.handleErrors(invController.updateInventory))
+
+// Delete - requires Employee/Admin
+router.get("/delete/:inv_id", utilities.checkAccountType, utilities.handleErrors(invController.deleteView))
+router.post("/delete", utilities.checkAccountType, utilities.handleErrors(invController.deleteItem))
+
+// AJAX route - requires Employee/Admin
+router.get("/getInventory/:classification_id", utilities.checkAccountType, utilities.handleErrors(invController.getInventoryJSON))
+
+// Note to SELF: Do not add checkAccountType to these routes (public):
+// router.get("/type/:classificationId", ...)  ← Public
+// router.get("/detail/:inv_id", ...)         ← Public
 
 // Route to trigger intentional 500 error
 router.get("/trigger-error", utilities.handleErrors(invController.triggerError))

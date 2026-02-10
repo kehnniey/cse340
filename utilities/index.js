@@ -160,6 +160,18 @@ Util.checkJWTToken = (req, res, next) => {
   }
  }
 
+ /* *********Week5 Assignment*******************************
+ * Middleware to check account type (Employee or Admin)
+ * Week 5, Authorization
+ * **************************************** */
+Util.checkAccountType = (req, res, next) => {
+  if (res.locals.loggedin && (res.locals.accountData.account_type === 'Employee' || res.locals.accountData.account_type === 'Admin')) {
+    next()
+  } else {
+    req.flash("notice", "Please log in with an Employee or Admin account.")
+    return res.redirect("/account/login")
+  }
+}
 
 //  * General Error Handling
 
