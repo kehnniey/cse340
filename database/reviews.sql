@@ -1,3 +1,5 @@
+--week 6: Final Project - Reviews Table and Sample Data
+
 -- Create reviews table
 CREATE TABLE IF NOT EXISTS reviews (
   review_id SERIAL PRIMARY KEY,
@@ -10,18 +12,17 @@ CREATE TABLE IF NOT EXISTS reviews (
   FOREIGN KEY (account_id) REFERENCES account(account_id) ON DELETE CASCADE
 );
 
--- Verify table created
+-- I want to Verify table created
 SELECT * FROM reviews;
 
 -- Testing Reviews
--- Insert test reviews (replace with actual account_id and inv_id from your database)
--- First, check your account IDs
+
 SELECT account_id, account_firstname, account_email FROM account;
 
 -- Check your inventory IDs
 SELECT inv_id, inv_make, inv_model FROM inventory LIMIT 5;
 
--- Add sample reviews (update IDs based on your data)
+-- Here are Sample reviews (update IDs based on your data)
 INSERT INTO reviews (inv_id, account_id, review_text, review_rating) 
 VALUES 
   (1, 1, 'Great car! Very reliable and fuel efficient. Highly recommend for daily commuting.', 5),
