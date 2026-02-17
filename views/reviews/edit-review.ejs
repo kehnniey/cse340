@@ -1,0 +1,70 @@
+<!-- Week 6: Final Project - Edit Review -->
+<h1><%= title %></h1>
+
+<% if (typeof messages !== 'undefined' && messages) { %>
+  <%- messages() %>
+<% } %>
+
+<% if (errors) { %>
+  <ul class="notice">
+    <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+    <%  }) %>
+  </ul>
+<% } %>
+
+<main class="edit-review">
+  <h2>Edit Your Review</h2>
+  <p class="vehicle-name"><%= vehicleName %></p>
+  
+  <form action="/reviews/update" method="post" class="review-form">
+    <!-- Hidden field for review_id (not inv_id) -->
+    <input type="hidden" name="review_id" value="<%= review_id %>">
+    
+    <label for="review_rating">
+      Rating (1-5 stars):
+      <select id="review_rating" name="review_rating" required>
+        <!-- Pre-select current rating -->
+        <option value="5" <%= review_rating == 5 ? 'selected' : '' %>>⭐⭐⭐⭐⭐ Excellent</option>
+        <option value="4" <%= review_rating == 4 ? 'selected' : '' %>>⭐⭐⭐⭐ Good</option>
+        <option value="3" <%= review_rating == 3 ? 'selected' : '' %>>⭐⭐⭐ Average</option>
+        <option value="2" <%= review_rating == 2 ? 'selected' : '' %>>⭐⭐ Poor</option>
+        <option value="1" <%= review_rating == 1 ? 'selected' : '' %>>⭐ Terrible</option>
+      </select>
+    </label>
+    
+    <label for="review_text">
+      Your Review:
+      <!-- Pre-fill with existing review text -->
+      <textarea 
+        id="review_text" 
+        name="review_text" 
+        required 
+        rows="6" 
+        minlength="10"
+        maxlength="1000"
+        placeholder="Share your thoughts about this vehicle..."
+      ><%= review_text %></textarea>
+      <span class="char-count">0/1000 characters</span>
+    </label>
+    
+    <!-- Changed button text -->
+    <button type="submit">Update Review</button>
+  </form>
+  
+  <!-- Back link goes to My Reviews -->
+  <p class="back-link"><a href="/reviews/my-reviews">← Back to My Reviews</a></p>
+</main>
+
+<!-- Character counter script -->
+<script>
+  const textarea = document.getElementById('review_text');
+  const charCount = document.querySelector('.char-count');
+  
+  textarea.addEventListener('input', function() {
+    charCount.textContent = `${this.value.length}/1000 characters`;
+  });
+  
+  // Initial count on page load
+  charCount.textContent = `${textarea.value.length}/1000 characters`;
+</script>

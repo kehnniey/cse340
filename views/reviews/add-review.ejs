@@ -1,0 +1,44 @@
+<!-- Week 6: Project -->
+
+<h1><%= title %></h1>
+
+<% if (typeof messages !== 'undefined' && messages) { %>
+  <%- messages() %>
+<% } %>
+
+<% if (errors) { %>
+  <ul class="notice">
+    <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+    <%  }) %>
+  </ul>
+<% } %>
+
+<main class="add-review">
+  <h2>Write a Review for <%= vehicleName %></h2>
+  
+  <form action="/reviews/add" method="post">
+    <input type="hidden" name="inv_id" value="<%= inv_id %>">
+    
+    <label for="review_rating">
+      Rating (1-5 stars):
+      <select id="review_rating" name="review_rating" required>
+        <option value="">Select rating</option>
+        <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+        <option value="4">⭐⭐⭐⭐ Good</option>
+        <option value="3">⭐⭐⭐ Average</option>
+        <option value="2">⭐⭐ Poor</option>
+        <option value="1">⭐ Terrible</option>
+      </select>
+    </label>
+    
+    <label for="review_text">
+      Your Review:
+      <textarea id="review_text" name="review_text" required rows="6" minlength="10" placeholder="Share your thoughts about this vehicle..."></textarea>
+    </label>
+    
+    <button type="submit">Submit Review</button>
+  </form>
+  
+  <p><a href="/inv/detail/<%= inv_id %>">← Back to Vehicle</a></p>
+</main>

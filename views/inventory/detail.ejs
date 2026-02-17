@@ -14,3 +14,38 @@
 
 <!-- Vehicle Detail Content -->
 <%- detailHTML %>
+
+
+<!--  Week 6: Project - Reviews Section -->
+
+<!-- Reviews Section -->
+<section class="reviews-section">
+  <h2>Customer Reviews</h2>
+  
+  <% if (averageRating > 0) { %>
+    <div class="rating-summary">
+      <p><strong>Average Rating:</strong> <%= averageRating.toFixed(1) %> ⭐ (<%= reviewCount %> reviews)</p>
+    </div>
+  <% } %>
+  
+  <% if (locals.loggedin) { %>
+    <p><a href="/reviews/add/<%= inv_id %>" class="add-review-btn">Write a Review</a></p>
+  <% } else { %>
+    <p><a href="/account/login">Login to write a review</a></p>
+  <% } %>
+  
+  <div class="reviews-list">
+    <% if (reviews && reviews.length > 0) { %>
+      <% reviews.forEach(review => { %>
+        <div class="review">
+          <p class="reviewer"><strong><%= review.account_firstname %> <%= review.account_lastname %></strong></p>
+          <p class="rating"><%= '⭐'.repeat(review.review_rating) %></p>
+          <p class="review-text"><%= review.review_text %></p>
+          <p class="review-date"><%= new Date(review.review_date).toLocaleDateString() %></p>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p>No reviews yet. Be the first to review this vehicle!</p>
+    <% } %>
+  </div>
+</section>

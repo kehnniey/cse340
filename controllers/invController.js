@@ -1,6 +1,8 @@
 // Required Resources
 const invModel = require("../models/inventory-model")
 const utilities = require("../utilities/")
+const reviewModel = require("../models/review-model") // week6: project
+
 
 const invCont = {}
 
@@ -29,7 +31,7 @@ invCont.buildByClassificationId = async function (req, res, next) {
 }
 
 
-// Build vehicle detail view
+// Build vehicle detail view - review added in week6
 
 invCont.buildInventoryDetail = async function (req, res, next) {
   const inv_id = parseInt(req.params.inv_id)
@@ -43,11 +45,18 @@ invCont.buildInventoryDetail = async function (req, res, next) {
 
   const nav = await utilities.getNav()
   const detailHTML = utilities.buildVehicleDetail(vehicle)
+  
+  const reviews = await reviewModel.getReviewsByVehicle(inv_id)
+  const ratingData = await reviewModel.getAverageRating(inv_id)
 
   res.render("./inventory/detail", {
     title: `${vehicle.inv_year} ${vehicle.inv_make} ${vehicle.inv_model}`,
     nav,
     detailHTML,
+    inv_id: vehicle.inv_id,
+    reviews: reviews,
+    averageRating: parseFloat(ratingData.avg_rating) || 0,  
+    reviewCount: parseInt(ratingData.review_count) || 0,    
     classificationId: vehicle.classification_id
   })
 }
@@ -327,6 +336,8 @@ invCont.deleteItem = async function (req, res, next) {
     res.redirect("/inv/delete/" + inv_id)
   }
 }
+
+
 
 // Intentional 500 error for testing
 

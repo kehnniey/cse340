@@ -997,3 +997,437 @@ input[readonly] {
   text-decoration: underline;
 }
 
+/* Week 6 Assignment*/
+/* ===== REVIEW VIEW ===== */
+/* ===================================================
+   REVIEWS SECTION - Final Project
+   =================================================== */
+
+/* Reviews on Detail Page */
+.reviews-section {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.reviews-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #000;
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.5rem;
+}
+
+.rating-summary {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.avg-rating {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.rating-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffc107;
+}
+
+.stars {
+  font-size: 2rem;
+}
+
+.review-count {
+  color: #666;
+  font-size: 1rem;
+}
+
+.add-review-cta {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.add-review-btn {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.add-review-btn:hover {
+  background-color: #333;
+}
+
+.login-prompt {
+  text-align: center;
+  padding: 1rem;
+  background-color: #fff3cd;
+  border: 2px solid #ffc107;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.login-prompt a {
+  color: #0066cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}
+
+.reviews-list {
+  margin-top: 2rem;
+}
+
+.review {
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.reviewer-name {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+}
+
+.review .rating {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.review-text {
+  line-height: 1.6;
+  color: #444;
+  margin: 1rem 0;
+}
+
+.review-date {
+  color: #999;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.no-reviews-msg {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* ===================================================
+   ADD/EDIT REVIEW FORMS - Enhanced Contrast
+   =================================================== */
+
+.add-review,
+.edit-review {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 1px solid #e0e0e0;
+}
+
+.add-review h1,
+.edit-review h1 {
+  color: #1a1a1a;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #2563eb;
+  padding-bottom: 1rem;
+}
+
+.add-review h2,
+.edit-review h2 {
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.review-info {
+  background-color: #dbeafe;
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 5px solid #2563eb;
+  line-height: 1.7;
+  color: #1e3a8a;
+  font-weight: 500;
+}
+
+.vehicle-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+}
+
+.review-form label {
+  display: block;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+.review-form select,
+.review-form textarea {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.75rem;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #ffffff;
+  transition: all 0.3s;
+}
+
+.review-form select {
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.review-form select:hover {
+  border-color: #2563eb;
+}
+
+.review-form select:focus,
+.review-form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.review-form textarea {
+  resize: vertical;
+  min-height: 180px;
+  line-height: 1.6;
+}
+
+.char-count {
+  display: block;
+  text-align: right;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.review-form button[type="submit"],
+.submit-btn {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  padding: 1.25rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: block;
+  margin-top: 1.5rem;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+}
+
+.review-form button[type="submit"]:hover,
+.submit-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  box-shadow: 0 6px 10px rgba(37, 99, 235, 0.4);
+  transform: translateY(-2px);
+}
+
+.review-form button[type="submit"]:active,
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+.back-link {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e5e7eb;
+}
+
+.back-link a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: color 0.3s;
+}
+
+.back-link a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Rating dropdown styling */
+.review-form select option {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+/* ===================================================
+   MY REVIEWS PAGE
+   =================================================== */
+
+.my-reviews {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.my-reviews h1 {
+  color: #000;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.5rem;
+}
+
+.review-count {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.reviews-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.review-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.review-card h3 {
+  font-size: 1.3rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #f0f0f0;
+}
+
+.review-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.edit-btn {
+  background-color: #0066cc;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #004499;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.no-reviews {
+  text-align: center;
+  padding: 3rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.no-reviews p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.no-reviews a {
+  color: #0066cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.no-reviews a:hover {
+  text-decoration: underline;
+}
+
+.back-link {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.back-link a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}

@@ -11,6 +11,8 @@ const utilities = require("./utilities/")
 const session = require("express-session")
 const pool = require('./database/')
 const cookieParser = require("cookie-parser")
+const reviewRoute = require("./routes/reviewRoute") /* Week 6: Final Project - Review Routes */
+
 
 /* **View Engine and Templates****/
 app.set("view engine", "ejs")
@@ -73,6 +75,8 @@ app.use("/account", accountRoute)
 
 // Static routes
 app.use(static)
+
+app.use("/reviews", reviewRoute) /* Week 6: Final Project - Review Routes */
 
 // 404 Route - Handles missing pages
 app.use(async (req, res, next) => {
